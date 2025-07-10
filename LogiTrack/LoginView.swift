@@ -5,17 +5,27 @@ struct LoginView: View {
     @Binding var isShowingSignup: Bool
     var registeredEmail: String?
     var registeredPassword: String?
+    @Binding var loggedInUserType: UserType?
+    @Binding var companyID: String?
+    @Binding var partnerID: String?
     @State private var email = ""
     @State private var password = ""
     @State private var showError = false
+    @State private var selectedUserType: UserType = .agent
     var body: some View {
         NavigationStack {
             VStack(spacing: 32) {
-                Text("LogiTrack Lite")
+                Text("LogiTrack")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                Picker("User Type", selection: $selectedUserType) {
+                    ForEach(UserType.allCases) { type in
+                        Text(type.rawValue).tag(type)
+                    }
+                }
+                .pickerStyle(.segmented)
                 VStack(spacing: 16) {
-                    TextField("Email", text: $email)
+                    TextField(selectedUserType == .company ? "Company Email" : "Email", text: $email)
                         .textContentType(.emailAddress)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
@@ -32,11 +42,27 @@ struct LoginView: View {
                     if let regEmail = registeredEmail, let regPwd = registeredPassword {
                         if email == regEmail && password == regPwd {
                             isLoggedIn = true
+                            loggedInUserType = selectedUserType
+                            if selectedUserType == .company {
+                                companyID = "COMPANY123"
+                                partnerID = "PARTNER123"
+                            } else {
+                                companyID = nil
+                                partnerID = "PARTNER123"
+                            }
                         } else {
                             showError = true
                         }
                     } else if !email.isEmpty && !password.isEmpty {
                         isLoggedIn = true
+                        loggedInUserType = selectedUserType
+                        if selectedUserType == .company {
+                            companyID = "COMPANY123"
+                            partnerID = "PARTNER123"
+                        } else {
+                            companyID = nil
+                            partnerID = "PARTNER123"
+                        }
                     } else {
                         showError = true
                     }
@@ -70,5 +96,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(isLoggedIn: .constant(false), isShowingSignup: .constant(false), registeredEmail: nil, registeredPassword: nil)
+    LoginView(isLoggedIn: .constant(false), isShowingSignup: .constant(false), registeredEmail: nil, registeredPassword: nil, loggedInUserType: .constant(nil), companyID: .constant(nil), partnerID: .constant(nil))
 } 
