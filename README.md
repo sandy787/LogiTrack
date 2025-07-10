@@ -18,7 +18,7 @@
 
 | Splash Screen | Login View | Company Creation |
 |---------------|------------|------------------|
-| ![](screenshots/IMG_6284.PNG) | ![](screenshots/IMG_6286.PNG) | ![](screenshots/IMG_6287.PNG) |
+| ![](screenshots/IMG_6286.PNG) | ![](screenshots/IMG_6287.PNG) | ![](screenshots/IMG_6284.PNG) |
 
 | Company Dashboard | Order Details |
 |-------------------|----------------|
