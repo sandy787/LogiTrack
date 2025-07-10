@@ -1,67 +1,108 @@
-```markdown
-# LogiTrack Lite
+# 🚚 LogiTrack 
 
-## Description
+**LogiTrack Lite** is a lightweight, SwiftUI-based iOS logistics tracking app designed for delivery agents. It simulates a real-world delivery platform using only free-tier Firebase services and Apple-native frameworks. Agents can view orders, update statuses, share live location, and visualize optimized routes — all in real time.
 
-LogiTrack Lite is an iOS application that simulates a lightweight logistics and delivery tracking platform for field agents. Built entirely with SwiftUI and Firebase (free tier), the app enables delivery agents to view assigned orders, update delivery statuses, share their live location, and visualize routes using Apple-native services.
+---
 
-The app uses Firebase Authentication for login, Firestore for real-time delivery data, Firebase Cloud Messaging (FCM) for push notifications, and CoreLocation + MapKit for GPS tracking and route visualization. Designed with modular UI components and a reactive data layer, LogiTrack Lite is a fully functional, scalable base for mobile logistics workflows without relying on paid APIs or services.
+## 🔍 Overview
 
-This project demonstrates proficiency in mobile architecture, Firebase integration, real-time databases, CoreLocation, MapKit, and accessibility-aware SwiftUI design.
+- 🔐 Firebase Authentication for secure agent login  
+- 📦 Real-time delivery order tracking via Firestore  
+- 📍 Live location sharing using CoreLocation  
+- 🗺️ Route visualization with Apple Maps (MapKit)  
+- 🔔 Push notifications via Firebase Cloud Messaging (FCM)
 
-## Features
+---
 
--   **Order Management:** View assigned delivery orders.
--   **Status Updates:** Update the delivery status of orders (e.g., "In Transit," "Delivered").
--   **Live Location Sharing:** Share live location with the platform for tracking.
--   **Route Visualization:** Visualize delivery routes using Apple Maps.
--   **Authentication:** Secure user authentication using Firebase Authentication.
--   **Real-time Data:** Utilizes Firestore for real-time delivery data updates.
--   **Push Notifications:** Receive push notifications via Firebase Cloud Messaging (FCM).
+## 📸 App Screenshots
 
-## Technologies Used
+| Splash Screen | Login View | Company Creation |
+|---------------|------------|------------------|
+| ![](screenshots/IMG_6284.PNG) | ![](screenshots/IMG_6286.PNG) | ![](screenshots/IMG_6287.PNG) |
 
--   SwiftUI
--   Firebase
-    -   Firebase Authentication
-    -   Firestore
-    -   Firebase Cloud Messaging (FCM)
--   CoreLocation
--   MapKit
+| Company Dashboard | Order Details |
+|-------------------|----------------|
+| ![](screenshots/IMG_6288.PNG) | ![](screenshots/IMG_6289.PNG) |
 
-## Installation
+---
 
-1.  **Clone the repository:**
+## ⚙️ Features
 
+- **Order Management** – View all assigned delivery orders  
+- **Status Updates** – Update order statuses: `Pending`, `In Transit`, `Delivered`  
+- **Live Location Sharing** – Real-time location updates via Firestore  
+- **Route Visualization** – Native MapKit route display to destination  
+- **Push Notifications** – Receive alerts using FCM  
+- **Modular UI** – Clean, reusable SwiftUI components  
+- **Offline-Safe** – Firestore persistence with background sync
+
+---
+
+## 🧰 Tech Stack
+
+- **Language:** Swift  
+- **Framework:** SwiftUI  
+- **Backend:** Firebase (Authentication, Firestore, Cloud Messaging)  
+- **Location Services:** CoreLocation  
+- **Maps:** MapKit  
+
+---
+
+## 🔧 Installation
+
+1. **Clone the Repository**
     ```bash
     git clone <repository_url>
     cd <project_directory>
     ```
 
-2.  **Install dependencies (if any, e.g., using CocoaPods or Swift Package Manager):**
+2. **Open in Xcode**  
+   Use **Xcode 13+**. Dependencies managed via **Swift Package Manager (SPM)**.
 
-    *(Assuming Swift Package Manager is used)*
+3. **Firebase Configuration**
+   - [Create a Firebase project](https://console.firebase.google.com/)
+   - Add a new iOS app to the project
+   - Download the `GoogleService-Info.plist` file
+   - Add it to the Xcode project root
+   - Enable:
+     - Firebase Authentication (Email/Password)
+     - Firestore Database
+     - Firebase Cloud Messaging (FCM)
 
-    Open the project in Xcode. Xcode will automatically download and install the Swift Package dependencies.
+4. **Build & Run**  
+   Run on a real device or simulator to test functionality.
 
-3.  **Configure Firebase:**
+---
 
-    -   Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/).
-    -   Add an iOS app to your Firebase project.
-    -   Download the `GoogleService-Info.plist` file and add it to your Xcode project.
-    -   Enable Authentication, Firestore, and Cloud Messaging in the Firebase Console.
-    -   Configure Authentication methods (e.g., Email/Password).
-    -   Set up Firestore rules according to your security requirements.
+## 🚀 Usage Flow
 
-## Usage
+1. **Login or Sign Up**  
+   Secure authentication with Firebase
 
-1.  **Open the project in Xcode.**
-2.  **Build and run the app on a simulator or a physical iOS device.**
-3.  **Log in using Firebase Authentication.**
-4.  **Start simulating delivery tasks, updating statuses, and sharing your location.**
-5.  **Observe the real-time data updates in the app.**
+2. **View Orders**  
+   Real-time updates of delivery assignments
 
-## License
+3. **Update Status**  
+   Mark deliveries as `In Transit` or `Delivered`
 
-MIT License
-```
+4. **Track Route**  
+   Visualize delivery path using MapKit
+
+5. **Share Location**  
+   Send live location updates to Firestore backend
+
+6. **Receive Notifications**  
+   Alerts about new orders via FCM
+
+---
+
+## 🧠 What This Demonstrates
+
+- Scalable mobile logistics UI/UX using SwiftUI
+- Integration of real-time Firestore data with SwiftUI views
+- Apple-native map routing with CoreLocation and MapKit
+- Firebase Authentication and push notifications setup
+- Accessibility-friendly design with modular architecture
+
+---
+
